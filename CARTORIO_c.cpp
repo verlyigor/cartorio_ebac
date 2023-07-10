@@ -123,7 +123,7 @@ int consultar()                                                    //função resp
 	system("cls");                                              // limpando tela
 	printf("Deseja consultar mais nomes?\n");                   // perguntando ao usuário
 	printf("\t1-Consultar mais nomes!\n");                     // opção de resposta 1 do usuário
-	printf("\t2-Voltar ao menu!\n\n");                         // opção de resposta 2 do usuário
+	printf("\t2-Voltar ao menu!\n\n");                          // opção de resposta 2 do usuário
 	printf("Opção: ");                                         // lugar de resposta 
 	scanf("%d", &opcao);                                       //salvando resposta do usuário
 	system("cls");                                             // limpando tela
@@ -228,7 +228,8 @@ int main() //Definindo variaveis
   	    printf("Escolha a opção deseja: \n\n");                     //inicio do menu
   	    printf("\t1 - Registrar nomes\n");                         
  	    printf("\t2 - Consultar nomes\n"); 
-    	printf("\t3 - Deletar nomes\n\n");
+    	printf("\t3 - Deletar nomes\n");
+    	printf("\t4 - Sair do programa\n\n");             
     	printf("Opção : ");                                        //fim do menu
 	
     	scanf("%d", &opcao);                                     // armazenando a escolha do usuário
@@ -248,6 +249,11 @@ int main() //Definindo variaveis
 		    case 3:                                          //se o usuário escolher a 2º opção 
 		    deletar();                                       //chmando a função 
         	break;                                           // pausando 
+        	
+        	case 4:                                          //se o usuário escolher a 4º opção
+            printf("Obrigado por utilizar o sistema!\n");    //agradecendo ao usuário
+        	return 0;                                        // retornando valor =0
+        	break;                                           //pausando
         	
         	default:                                          // se a opção do usuário for invalida
         	printf("Opçao invalida!\n");                      //informando ao usuário
