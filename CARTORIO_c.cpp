@@ -211,57 +211,77 @@ int deletar()                                               // iniciando função 
     
 }
 
-int main() //Definindo variaveis 
+int main()                                                         //Definindo variaveis 
 {
     int opcao=0;                                                  // variavel opção = 0
-     
     int laco=1;                                                   // definindo laco = 1
+    char senhadigitada[]="a";                                     //criando string senha
+    int comparacao;
     
-    for(laco=1;laco=1;)                                           //definindo repetição 
+    printf("### BEM VINDO AO CARTÓRIO DA EBAC! ###\n\n");        //Apresentação de programa 
+    printf("Logim de administrador!\n\n");                       // mostrando login
+    printf("Digite sua senha: ");                                //pedindo senha do usuário
+    scanf("%s",senhadigitada);                                   //scaniando responta do usuário
+    
+    comparacao = strcmp(senhadigitada, "admin");                    //comparando senha
+    system("cls");                                                 // limpando tela
+    
+    if(comparacao == 0)                                            //se a comparação for correta
     {
+		
+	
+        for(laco=1;laco=1;)                                           //definindo repetição 
+        {
     	
-    	system("cls");                                            //limpando tela
+        	system("cls");                                            //limpando tela
  	
-    	setlocale(LC_ALL, "Portuguese");                             // definindo a linguagem
+        	setlocale(LC_ALL, "Portuguese");                             // definindo a linguagem
 	                            
-    	printf("### BEM VINDO AO CARTÓRIO DA EBAC! ###\n\n");        //Apresentação de programa 
-  	    printf("Escolha a opção deseja: \n\n");                     //inicio do menu
-  	    printf("\t1 - Registrar nomes\n");                         
- 	    printf("\t2 - Consultar nomes\n"); 
-    	printf("\t3 - Deletar nomes\n");
-    	printf("\t4 - Sair do programa\n\n");             
-    	printf("Opção : ");                                        //fim do menu
+        	printf("### BEM VINDO AO CARTÓRIO DA EBAC! ###\n\n");        //Apresentação de programa 
+  	        printf("Escolha a opção deseja: \n\n");                     //inicio do menu
+  	        printf("\t1 - Registrar nomes\n");                         
+ 	        printf("\t2 - Consultar nomes\n"); 
+        	printf("\t3 - Deletar nomes\n");
+        	printf("\t4 - Sair do programa\n\n");             
+        	printf("Opção : ");                                        //fim do menu
+	 
+        	scanf("%d", &opcao);                                     // armazenando a escolha do usuário
 	
-    	scanf("%d", &opcao);                                     // armazenando a escolha do usuário
-	
-    	system("cls");                                           // função de deletar tela 
+        	system("cls");                                           // função de deletar tela 
     	
-    	switch(opcao)
-    	{
-    		case 1:                                           // se o usuário escolher a 1º opção 
-    		registro();                                       //clamando a função principal
-			break;                                           //pausndo
+        	switch(opcao)
+        	{
+    	    	case 1:                                           // se o usuário escolher a 1º opção 
+    	    	registro();                                       //clamando a função principal
+		    	break;                                           //pausndo
 			 
-			case 2:                                          //se o usuário escolher a 2º opção 
-			consultar();                                     // chamndo a função 
-		    break;                                           //pausando
+		    	case 2:                                          //se o usuário escolher a 2º opção 
+	    	  	consultar();                                     // chamndo a função 
+	    	    break;                                           //pausando
 		    
-		    case 3:                                          //se o usuário escolher a 2º opção 
-		    deletar();                                       //chmando a função 
-        	break;                                           // pausando 
+	    	    case 3:                                          //se o usuário escolher a 2º opção 
+		        deletar();                                       //chmando a função 
+        	    break;                                           // pausando 
         	
-        	case 4:                                          //se o usuário escolher a 4º opção
-            printf("Obrigado por utilizar o sistema!\n");    //agradecendo ao usuário
-        	return 0;                                        // retornando valor =0
-        	break;                                           //pausando
+             	case 4:                                          //se o usuário escolher a 4º opção
+                printf("Obrigado por utilizar o sistema!\n");    //agradecendo ao usuário
+            	return 0;                                        // retornando valor =0
+            	break;                                           //pausando
         	
-        	default:                                          // se a opção do usuário for invalida
-        	printf("Opçao invalida!\n");                      //informando ao usuário
-	    	break;                                            //pausando
+            	default:                                          // se a opção do usuário for invalida
+            	printf("Opçao invalida!\n");                      //informando ao usuário
+	        	break;                                            //pausando
 	    		
-		}
+	 	     }
 	
 	    system("pause");                                    //pausando 
 	
+    }
+    
     }    
+    
+    else                                                       
+        printf("\n\nSenha incorreta!");                          // informando ao usuário
+    
+	
 }
